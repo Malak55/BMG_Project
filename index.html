@@ -10,7 +10,7 @@
     <link href="https://getbootstrap.com/docs/4.0/examples/carousel/"
     rel="stylesheet" type="text/css">
     <link href="assets/css/carousel.css" rel="stylesheet">
-    <title>Hello, world!</title>
+    <!-- <title>Hello, world!</title> -->
   </head>
   <body>
     <header>
@@ -22,18 +22,18 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Links</a>
+                <!-- <a class="nav-link" href="#">Links</a> -->
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#">Links2</a>
+                <!-- <a class="nav-link disabled" href="#">Links2</a> -->
               </li>
             </ul>
-            <form class="form-inline mt-2 mt-md-0">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <!-- <form class="form-inline mt-2 mt-md-0"> -->
+              <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+              <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
             </form>
           </div>
         </nav>
@@ -46,35 +46,46 @@
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
+            <li data-target="#myCarousel" data-slide-to="3"></li>
           </ol>
           <div class="carousel-inner">
             <div class="carousel-item active">
               <img class="first-slide" src="assets/images/travel3.jpg" alt="First slide">
               <div class="container">
-                <div class="carousel-caption text-left">
+                <div class="carousel-caption">
                   <h1>TRAVEL</h1>
                   <p>Compile your destination here!</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                 </div>
               </div>
             </div>
             <div class="carousel-item">
               <img class="second-slide" src="assets/images/plane2.jpg" alt="Second slide">
               <div class="container">
-                <div class="carousel-caption">
-                  <h1>AIRLINE/HOTEL</h1>
+                <div class="carousel-caption text-left">
+                  <h1>AIRLINE</h1>
                   <p>Pick your favorite airline and hotel.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p> -->
                 </div>
               </div>
             </div>
             <div class="carousel-item">
-              <img class="third-slide" src="assets/images/events4.jpg" alt="Third slide">
+              <img class="third-slide" src="assets/images/hotel3.webp" alt="Third slide">
+              <div class="container">
+                <div class="carousel-caption">
+                  <h1>HOTEL</h1>
+                  <p>Pick from a variety of hotels.</p>
+                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img class="third-slide" src="assets/images/events3.jpg" alt="Fourth slide">
               <div class="container">
                 <div class="carousel-caption text-right">
                   <h1>EVENTS</h1>
-                  <p>Pick from numerous events.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                  <p>Pick from numerous exciting events.</p>
+                  <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p> -->
                 </div>
               </div>
             </div>
@@ -92,6 +103,19 @@
   
         <!-- Marketing messaging and featurettes
         ================================================== -->
+        <hr class="featurette-divider">
+
+          <!--HERE GOES DATE ENTRY-->
+          <div class="row featurette">
+            <div class="col-md-7">
+              <!-- <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2> -->
+              <!-- <p class="lead">See articles on how to make your destination the best it can be.</p> -->
+            <!-- </div> -->
+            <!-- <div class="col-md-5"> -->
+              <!-- <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
+            </div>
+          </div>
+        
         <!-- Wrap the rest of the page in another container to center all the content. -->
   
         <div class="container marketing">
@@ -101,7 +125,7 @@
             <div class="col-lg-4">
               <img class="rounded-circle" src="assets/images/plane2.jpg" alt="Airline image" width="140" height="140">
               <h2>Airline</h2>
-              <p>Find your destination. Pick from numerous airlines.</p>
+              <p>Plan your flight. Pick from numerous airlines.</p>
               <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
@@ -121,20 +145,22 @@
   
           <!-- START THE FEATURETTES -->
   
+        <div class="container-fluid">
+
           <hr class="featurette-divider">
-  
+          <!--HERE GOES AIRLINE-->
           <div class="row featurette">
             <div class="col-md-7">
-              <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2>
+              <!-- <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2>
               <p class="lead">See articles on how to make your destination the best it can be.</p>
             </div>
             <div class="col-md-5">
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
+            </div> -->
           </div>
   
           <hr class="featurette-divider">
-  
+          <!--HERE GOES HOTELS-->
           <div class="row featurette">
             <div class="col-md-7 order-md-2">
               <h2 class="featurette-heading">How to find your best choice of airlines. <span class="text-muted">See for yourself.</span></h2>
@@ -146,7 +172,7 @@
           </div>
   
           <hr class="featurette-divider">
-  
+          <!--HERE GOES EVENTS-->
           <div class="row featurette">
             <div class="col-md-7">
               <h2 class="featurette-heading">And lastly, here is your itinerary. <span class="text-muted">Checkmate.</span></h2>
@@ -156,7 +182,7 @@
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
             </div>
           </div>
-  
+        </div>
           <hr class="featurette-divider">
   
           <!-- /END THE FEATURETTES -->
@@ -167,7 +193,7 @@
         <!-- FOOTER -->
         <footer class="container">
           <p class="float-right"><a href="#">Back to top</a></p>
-          <p>&copy; 2018 BMG Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+          <p>&copy; 2018 BMG Company, Inc. &middot; <a>Privacy</a> &middot; <a>Terms</a></p>
         </footer>
       </main>
 
