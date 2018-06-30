@@ -103,19 +103,62 @@
   
         <!-- Marketing messaging and featurettes
         ================================================== -->
-        <hr class="featurette-divider">
+        <!-- <hr class="featurette-divider"> -->
 
           <!--HERE GOES DATE ENTRY-->
           <div class="row featurette">
             <div class="col-md-7">
+              <form>
+                <p>Departure <input type="TEXT" size="35" maxlength-"99" /><div class="form-check">
+                    <input class="form-check-input" type="radio" name="Radios" id="RadiosRT" value="option1" checked>
+                    <label class="form-check-label" for="Radios1">
+                    Round Trip
+                    </label>
+                  </div>
+                </p>
+              </form>
+                <p>Destination 
+                    <span><input type="TEXT" size="35" maxlength-"99" /><div class="form-check"></div></span>
+                    <input class="form-check-input" display="inline: block" type="radio" name="Radios" id="RadiosOW" value="option1" checked>
+                    <label class="form-check-label" for="Radios2">
+                      One Way
+                    </label>
+                  </div>
+                
+                  <div class="form-group row">
+                    <label for="example-date-input" class="col-2 col-form-label">Depature Date</label>
+                      <div class="col-10">
+                        <input class="form control" type="date" value"2011-08-19" id="example-date-input">
+                      </div>
+                  </div>
+
+                  <div class="form-group row">
+                      <label for="example-date-input" class="col-2 col-form-label">Return Date</label>
+                        <div class="col-10">
+                          <input class="form control" type="date" value"2011-08-19" id="example-date-input">
+                        </div>
+                  </div>
+              
+                  <div class="form-group">
+                      <label for="exampleFormControlSelect1">Number of People</label>
+                      <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                      </select>
+                    </div>
               <!-- <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2> -->
               <!-- <p class="lead">See articles on how to make your destination the best it can be.</p> -->
-            <!-- </div> -->
-            <!-- <div class="col-md-5"> -->
+              <!-- </div> -->
+              <!-- <div class="col-md-5"> -->
               <!-- <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
             </div>
           </div>
         
+          <hr class="featurette-divider">
         <!-- Wrap the rest of the page in another container to center all the content. -->
   
         <div class="container marketing">
@@ -126,20 +169,37 @@
               <img class="rounded-circle" src="assets/images/plane2.jpg" alt="Airline image" width="140" height="140">
               <h2>Airline</h2>
               <p>Plan your flight. Pick from numerous airlines.</p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckboxAir" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
               <img class="rounded-circle" src="assets/images/hotel2.jpg" alt="Hotel image" width="140" height="140">
               <h2>Hotel</h2>
               <p>Find your accomodations. Select your hotel.</p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckboxHotel" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox2">2</label>
+                </div>
+              </p>
             </div><!-- /.col-lg-4 -->
             <div class="col-lg-4">
               <img class="rounded-circle" src="assets/images/events5.jpg" alt="Events Image" width="140" height="140">
               <h2>Events</h2>
               <p>Make your trip one to remember. See events scheduled around your destination.</p>
-              <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+              <p>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckboxEvents" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox3">3</label>
+                </div>
+              </p>
             </div><!-- /.col-lg-4 -->
+              <input class="btn btn-primary" type="submit" value="Show Options">
+              <input class="btn btn-primary" type="reset" value="Reset">
           </div><!-- /.row -->
   
   
@@ -149,19 +209,19 @@
 
           <hr class="featurette-divider">
           <!--HERE GOES AIRLINE-->
-          <div class="row featurette">
+          <div class="row featurette" id="airlineDiv" >
             <div class="col-md-7">
-              <!-- <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2>
+              <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2>
               <p class="lead">See articles on how to make your destination the best it can be.</p>
             </div>
             <div class="col-md-5">
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div> -->
+            </div>
           </div>
   
           <hr class="featurette-divider">
           <!--HERE GOES HOTELS-->
-          <div class="row featurette">
+          <div class="row featurette" id="hotelDiv">
             <div class="col-md-7 order-md-2">
               <h2 class="featurette-heading">How to find your best choice of airlines. <span class="text-muted">See for yourself.</span></h2>
               <p class="lead">Don't get your wings clipped. We're here to help.</p>
@@ -173,7 +233,7 @@
   
           <hr class="featurette-divider">
           <!--HERE GOES EVENTS-->
-          <div class="row featurette">
+          <div class="row featurette" id="eventsDiv">
             <div class="col-md-7">
               <h2 class="featurette-heading">And lastly, here is your itinerary. <span class="text-muted">Checkmate.</span></h2>
               <p class="lead">Here we compile your destination checklist.</p>
