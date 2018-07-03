@@ -16,10 +16,37 @@
     margin: auto;
     width: 50%;
     border: 3px solid green;
-    padding: 10px;
+    padding: 5px;
     text-align: center;
   }
 
+  #div3 {
+    margin-left: 5px;
+  }
+
+  #FormControlSelect1 {
+    margin: auto;
+    /* width: 50%; */
+    border: 1px solid green;
+    /* padding: 10px; */
+    text-align: center;
+  }
+
+  #depart-date1 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #return-date1 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+  }
   .col-md-12 {
     border: 1px solid #5a5a5a;
   }
@@ -42,7 +69,13 @@
   }
   
   .form-group {
-    width: 450px;
+    width: 100px;
+    align-self: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
   }
   
   .form-group-row {

@@ -323,7 +323,7 @@ $(document).ready(function () {
             "<td>" + eventOptionList[k].provider + "</td>" + 
             "<td>" + eventOptionList[k].location + "</td>" + 
             "<td>" + eventOptionList[k].duration + "</td>" + 
-            "<td>" + eventOptionList[k].rating + "</td></tr>" +
+            "<td>" + eventOptionList[k].rating + "</td>" +
             "<td>" + eventOptionList[k].description + "</td>" + 
             "<td>" + eventOptionList[k].price + "</td></tr>");
 
