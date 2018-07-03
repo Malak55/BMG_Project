@@ -13,7 +13,28 @@
 
   </head>
   <body>
+
+    
+    <!-- Allow the display of a pop-up (modal) message -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+          
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <p id="modal-text" style="white-space: pre-line">Some text in the modal.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+            
+      </div>
+    </div>
+    <!-- End of pop-up (modal) message tags -->
     <!-- NAVBAR -->
+
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
           <a class="navbar-brand" href="#">Culmination Destination</a>
@@ -109,37 +130,46 @@
 
           <!--HERE GOES DATE ENTRY-->
           <div class="row featurette">
-            <div class="col-lg-12">
-              <form>
-                <p>Departure 
+            <div class="col-md-12">
+                <div id="div1">
+                  <p>Departure 
                     <input type="TEXT" size="35" maxlength-"99" id="depart-form" />
-                    <br>
                     <div class="form-check" display: "inline block">
+                  </p>
+                </div>
+                
+                <div id="div2">
+                  <p>Destination 
+                    <input type="TEXT" size="35" maxlength-"99" id="dest-form" />
+                    <div class="form-check"></div>
+                  </p>
+                </div>
+
+                <div id="div3">
                     <input class="form-check-input" type="radio" name="Radios" id="RadiosRT" value="option1" checked>
                     <label class="form-check-label" for="Radios1">Round Trip</label>
-                </p>
-              </form>
-                <p>Destination 
-                    <input type="TEXT" size="35" maxlength-"99" id="dest-form" /><div class="form-check"></div></span>
+                </div>
+
+                <div id="div4">
                     <input class="form-check-input" display="inline: block" type="radio" name="Radios" id="RadiosOW" value="option1" checked>
                     <label class="form-check-label" for="Radios2">One Way</label>
-                  </div>
+                </div>
                 
-                  <div class="form-group row">
+                <div class="form-group row" id="depart-date1">
                     <label for="depart-date" class="col-2 col-form-label">Depature Date</label>
                       <div class="col-10">
                         <input class="form control" type="date" value"2011-08-19" id="depart-date">
                       </div>
-                  </div>
+                </div>
 
-                  <div class="form-group row">
+                <div class="form-group row" id="return-date1">
                       <label for="return-date" class="col-2 col-form-label">Return Date</label>
                         <div class="col-10">
                           <input class="form control" type="date" value"2011-08-20" id="return-date">
                         </div>
-                  </div>
+                </div>
               
-                  <div class="form-group">
+                <div class="form-group">
                       <label for="FormControlSelect1">Number of People</label>
                       <select class="form-control" id="FormControlSelect1">
                         <option>1</option>
@@ -149,10 +179,7 @@
                         <option>5</option>
                         <option>6</option>
                       </select>
-                    </div>
-              <!-- <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2> -->
-              <!-- <p class="lead">See articles on how to make your destination the best it can be.</p> -->
-              <!-- </div> -->
+                </div>
               <!-- <div class="col-md-5"> -->
               <!-- <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
             </div>
@@ -193,7 +220,7 @@
             <div class="col-lg-4">
               <img class="rounded-circle" src="assets/images/events5.jpg" alt="Events Image" width="140" height="140">
               <h2>Events</h2>
-              <p>Make your trip one to remember. See events scheduled around your destination.</p>
+              <p>Make your trip one to remember. See events scheduled.</p>
               <p>
               <!-- CHECK BOX FOR EVENTS -->
                 <div class="form-check form-check-inline">
@@ -202,8 +229,8 @@
                 </div>
               </p>
             </div><!-- /.col-lg-4 -->
-            <!-- SUBMIT AND RESET BUTTONS -->
-              <input class="btn btn-primary" type="submit" value="Show Options">
+
+              <input class="btn btn-primary" id="showButton" type="submit" value="Show Options">
               <input class="btn btn-primary" type="reset" value="Reset">
           </div><!-- /.row -->
   
@@ -214,22 +241,68 @@
 
           <hr class="featurette-divider">
           <!--HERE GOES AIRLINE-->
-          <div class="row featurette" id="airlineDiv" >
+          <div class="row featurette" id="airlineDiv">
             <div class="col-md-7">
-              <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2>
+              <h2 class="featurette-heading">How to find your airline. <span class="text-muted"><br>Fly like an eagle!</span></h2>
+
               <p class="lead">See articles on how to make your destination the best it can be.</p>
             </div>
             <div class="col-md-5">
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-            </div>
+            </div> -->
+            <div class="container-airline-info table-responsive">
+              <div class="air-table-header">
+                  <h5 class="text-left">Flight Options</h5>
+              </div>
+              <table class="table table-striped table-bordered airline-table">
+                <thead>
+                  <tr class="table-primary">
+                      <th scope="col">Option #</th>
+                      <th scope="col">Carrier</th>
+                      <th scope="col">Departure Time</th>
+                      <th scope="col">Arrival Time</th>
+                      <th scope="col">Duration</th>
+                      <th scope="col"># Stops</th>
+                      <th scope="col">Rating</th>
+                      <th scope="col">Fare Type</th>
+                      <th scope="col">Price</th>
+                  </tr>
+                </thead>
+                <tbody class="airline-options-list">
+                  <!-- Empty list - added as needed dynamically by Javascript -->
+                </tbody>
+              </table>
+            </div>    
           </div>
   
           <hr class="featurette-divider">
           <!--HERE GOES HOTELS-->
           <div class="row featurette" id="hotelDiv">
             <div class="col-md-7 order-md-2">
-              <h2 class="featurette-heading">How to find your best choice of airlines. <span class="text-muted">See for yourself.</span></h2>
-              <p class="lead">Don't get your wings clipped. We're here to help.</p>
+              <!-- <h2 class="featurette-heading">How to find your best choice of airlines. <span class="text-muted">See for yourself.</span></h2>
+              <p class="lead">Don't get your wings clipped. We're here to help.</p> -->
+
+              <div class="container-hotel-info table-responsive">
+                  <div class="hotel-table-header">
+                      <h5 class="text-left">Hotel Options</h5>
+                  </div>
+                  <table class="table table-striped table-bordered hotel-table">
+                    <thead>
+                      <tr class="table-primary">
+                          <th scope="col">Option #</th>
+                          <th scope="col">Hotel Name</th>
+                          <th scope="col">Location</th>
+                          <th scope="col">Phone Number</th>
+                          <th scope="col">Rating</th>
+                          <th scope="col">Price / Night</th>
+                      </tr>
+                    </thead>
+                    <tbody class="hotel-options-list">
+                      <!-- Empty list - added as needed dynamically by Javascript -->
+                    </tbody>
+                  </table>
+                </div>    
+              
             </div>
             <div class="col-md-5 order-md-1">
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
@@ -240,8 +313,30 @@
           <!--HERE GOES EVENTS-->
           <div class="row featurette" id="eventsDiv">
             <div class="col-md-7">
-              <h2 class="featurette-heading">Find your events! <span class="text-muted">Have fun.</span></h2>
-              <p class="lead">Make your trip memorable!</p>
+<!--               <h2 class="featurette-heading">Find your events. <span class="text-muted">Have fun!</span></h2>
+              <p class="lead">Make your trip memorable!</p> -->
+              <div class="container-event-info table-responsive">
+                  <div class="event-table-header">
+                      <h5 class="text-left">Event Options</h5>
+                  </div>
+                  <table class="table table-striped table-bordered event-table">
+                    <thead>
+                      <tr class="table-primary">
+                          <th scope="col">Option #</th>
+                          <th scope="col">Event</th>
+                          <th scope="col">Provider</th>
+                          <th scope="col">Location</th>
+                          <th scope="col">Duration</th>
+                          <th scope="col">Rating</th>
+                          <th scope="col">Description</th>
+                          <th scope="col">Price / Person</th>
+                      </tr>
+                    </thead>
+                    <tbody class="event-options-list">
+                      <!-- Empty list - added as needed dynamically by Javascript -->    
+                    </tbody>
+                  </table>
+                </div>    
             </div>
             <div class="col-md-5">
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
@@ -262,9 +357,30 @@
         </footer>
       </main>
 
+         <!-- Allow the display of a pop-up (modal) message -->
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p id="modal-text" style="white-space: pre-line">Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+          
+    </div>
+  </div>
+  <!-- End of pop-up (modal) message tags -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="./assets/javascript/app.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="./assets/javascript/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
