@@ -10,9 +10,10 @@
     <link href="https://getbootstrap.com/docs/4.0/examples/carousel/"
     rel="stylesheet" type="text/css">
     <link href="assets/css/carousel.css" rel="stylesheet">
-    <!-- <title>Hello, world!</title> -->
+
   </head>
   <body>
+
     
     <!-- Allow the display of a pop-up (modal) message -->
     <!-- Modal -->
@@ -32,6 +33,7 @@
       </div>
     </div>
     <!-- End of pop-up (modal) message tags -->
+    <!-- NAVBAR -->
 
     <header>
         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
@@ -59,8 +61,9 @@
         </nav>
       </header>
   
+      <!-- CAROUSEL -->
       <main role="main">
-  
+
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -127,14 +130,12 @@
 
           <!--HERE GOES DATE ENTRY-->
           <div class="row featurette">
-            <div class="col-md-7">
+            <div class="col-md-12">
               <form>
                 <p>Departure <input type="TEXT" size="35" maxlength-"99" id="depart-form" /><div class="form-check">
+
                     <input class="form-check-input" type="radio" name="Radios" id="RadiosRT" value="option1" checked>
-                    <label class="form-check-label" for="Radios1">
-                    Round Trip
-                    </label>
-                  </div>
+                    <label class="form-check-label" for="Radios1">Round Trip</label>
                 </p>
               </form>
                 <p>Destination 
@@ -143,6 +144,7 @@
                     <label class="form-check-label" for="Radios2">
                       One Way
                     </label>
+
                   </div>
                 
                   <div class="form-group row">
@@ -160,7 +162,7 @@
                   </div>
               
                   <div class="form-group">
-                      <label for="exampleFormControlSelect1">Number of People</label>
+                      <label for="FormControlSelect1">Number of People</label>
                       <select class="form-control" id="FormControlSelect1">
                         <option>1</option>
                         <option>2</option>
@@ -178,9 +180,10 @@
             </div>
           </div>
         
-          <hr class="featurette-divider">
+          <!-- <hr class="featurette-divider"> -->
         <!-- Wrap the rest of the page in another container to center all the content. -->
-  
+          <br>
+          <br>
         <div class="container marketing">
   
           <!-- Three columns of text below the carousel -->
@@ -190,6 +193,7 @@
               <h2>Airline</h2>
               <p>Plan your flight. Pick from numerous airlines.</p>
               <p>
+                <!-- CHECK BOX FOR AIR -->
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" id="inlineCheckboxAir" value="option1">
                   <label class="form-check-label" for="inlineCheckbox1">1</label>
@@ -201,6 +205,7 @@
               <h2>Hotel</h2>
               <p>Find your accomodations. Select your hotel.</p>
               <p>
+                <!-- CHECK BOX FOR HOTELS -->
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" id="inlineCheckboxHotel" value="option1">
                   <label class="form-check-label" for="inlineCheckbox2">2</label>
@@ -212,12 +217,14 @@
               <h2>Events</h2>
               <p>Make your trip one to remember. See events scheduled around your destination.</p>
               <p>
+              <!-- CHECK BOX FOR EVENTS -->
                 <div class="form-check form-check-inline">
                   <input class="form-check-input" type="checkbox" id="inlineCheckboxEvents" value="option1">
                   <label class="form-check-label" for="inlineCheckbox3">3</label>
                 </div>
               </p>
             </div><!-- /.col-lg-4 -->
+
               <input class="btn btn-primary" id="showButton" type="submit" value="Show Options">
               <input class="btn btn-primary" type="reset" value="Reset">
           </div><!-- /.row -->
@@ -300,6 +307,7 @@
           <!--HERE GOES EVENTS-->
           <div class="row featurette" id="eventsDiv">
             <div class="col-md-7">
+
               <!-- <h2 class="featurette-heading">And lastly, here is your itinerary. <span class="text-muted">Checkmate.</span></h2>
               <p class="lead">Here we compile your destination checklist.</p> -->
               
@@ -325,8 +333,6 @@
                     </tbody>
                   </table>
                 </div>    
-
-
             </div>
             <div class="col-md-5">
               <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
