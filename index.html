@@ -131,37 +131,45 @@
           <!--HERE GOES DATE ENTRY-->
           <div class="row featurette">
             <div class="col-md-12">
-              <form>
-                <p>Departure <input type="TEXT" size="35" maxlength-"99" id="depart-form" /><div class="form-check">
+                <div id="div1">
+                  <p>Departure 
+                    <input type="TEXT" size="35" maxlength-"99" id="depart-form" />
+                    <div class="form-check" display: "inline block">
+                  </p>
+                </div>
+                
+                <div id="div2">
+                  <p>Destination 
+                    <input type="TEXT" size="35" maxlength-"99" id="dest-form" />
+                    <div class="form-check"></div>
+                  </p>
+                </div>
 
+                <div id="div3">
                     <input class="form-check-input" type="radio" name="Radios" id="RadiosRT" value="option1" checked>
                     <label class="form-check-label" for="Radios1">Round Trip</label>
-                </p>
-              </form>
-                <p>Destination 
-                    <span><input type="TEXT" size="35" maxlength-"99" id="dest-form" /><div class="form-check"></div></span>
-                    <input class="form-check-input" display="inline: block" type="radio" name="Radios" id="RadiosOW" value="option2">
-                    <label class="form-check-label" for="Radios2">
-                      One Way
-                    </label>
+                </div>
 
-                  </div>
+                <div id="div4">
+                    <input class="form-check-input" display="inline: block" type="radio" name="Radios" id="RadiosOW" value="option1" checked>
+                    <label class="form-check-label" for="Radios2">One Way</label>
+                </div>
                 
-                  <div class="form-group row">
+                <div class="form-group row" id="depart-date1">
                     <label for="depart-date" class="col-2 col-form-label">Depature Date</label>
                       <div class="col-10">
                         <input class="form control" type="date" value"2011-08-19" id="depart-date">
                       </div>
-                  </div>
+                </div>
 
-                  <div class="form-group row">
+                <div class="form-group row" id="return-date1">
                       <label for="return-date" class="col-2 col-form-label">Return Date</label>
                         <div class="col-10">
                           <input class="form control" type="date" value"2011-08-20" id="return-date">
                         </div>
-                  </div>
+                </div>
               
-                  <div class="form-group">
+                <div class="form-group">
                       <label for="FormControlSelect1">Number of People</label>
                       <select class="form-control" id="FormControlSelect1">
                         <option>1</option>
@@ -171,10 +179,7 @@
                         <option>5</option>
                         <option>6</option>
                       </select>
-                    </div>
-              <!-- <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2> -->
-              <!-- <p class="lead">See articles on how to make your destination the best it can be.</p> -->
-              <!-- </div> -->
+                </div>
               <!-- <div class="col-md-5"> -->
               <!-- <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="Generic placeholder image"> -->
             </div>
@@ -215,7 +220,7 @@
             <div class="col-lg-4">
               <img class="rounded-circle" src="assets/images/events5.jpg" alt="Events Image" width="140" height="140">
               <h2>Events</h2>
-              <p>Make your trip one to remember. See events scheduled around your destination.</p>
+              <p>Make your trip one to remember. See events scheduled.</p>
               <p>
               <!-- CHECK BOX FOR EVENTS -->
                 <div class="form-check form-check-inline">
@@ -232,13 +237,14 @@
   
           <!-- START THE FEATURETTES -->
   
-        <div class="container-fluid">
+        <div class="container-fluid" style= "padding-top": -100px>
 
           <hr class="featurette-divider">
           <!--HERE GOES AIRLINE-->
-          <div class="row featurette" id="airlineDiv" >
-            <!-- <div class="col-md-7">
-              <h2 class="featurette-heading">Travel: <span class="text-muted">It'll blow your mind.</span></h2>
+          <div class="row featurette" id="airlineDiv">
+            <div class="col-md-7">
+              <h2 class="featurette-heading">How to find your airline. <span class="text-muted"><br>Fly like an eagle!</span></h2>
+
               <p class="lead">See articles on how to make your destination the best it can be.</p>
             </div>
             <div class="col-md-5">
@@ -307,10 +313,8 @@
           <!--HERE GOES EVENTS-->
           <div class="row featurette" id="eventsDiv">
             <div class="col-md-7">
-
-              <!-- <h2 class="featurette-heading">And lastly, here is your itinerary. <span class="text-muted">Checkmate.</span></h2>
-              <p class="lead">Here we compile your destination checklist.</p> -->
-              
+<!--               <h2 class="featurette-heading">Find your events. <span class="text-muted">Have fun!</span></h2>
+              <p class="lead">Make your trip memorable!</p> -->
               <div class="container-event-info table-responsive">
                   <div class="event-table-header">
                       <h5 class="text-left">Event Options</h5>
@@ -353,8 +357,28 @@
         </footer>
       </main>
 
+         <!-- Allow the display of a pop-up (modal) message -->
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-body">
+          <p id="modal-text" style="white-space: pre-line">Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+          
+    </div>
+  </div>
+  <!-- End of pop-up (modal) message tags -->
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="./assets/javascript/app.js"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="./assets/javascript/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
