@@ -241,6 +241,9 @@ $(document).ready(function () {
         returnDate = $("#return-date").val();
         numPeople = $("#FormControlSelect1").val();
 
+        // console.log("moment().diff(departDate, 'days') = " + moment().diff(departDate, "days"));
+        
+
         // Verify user Inputs
         var validInput = true;
 
@@ -263,9 +266,26 @@ $(document).ready(function () {
             $("#modal-text").append("- Please select a valid Departure Date." + "\n");
         };
 
+        var isDateInPast = (moment().diff(departDate, "days") > 0);
+        if (isDateInPast) {
+            validInput = false;
+            $("#modal-text").append("- Please select a Departure Date that is today or later." + "\n");  
+        }
+
+        isDateInPast = (moment().diff(returnDate, "days") > 0);
+        if (isDateInPast) {
+            validInput = false;
+            $("#modal-text").append("- Please select a Return Date that is today or later." + "\n");  
+        }
+
         if (returnDate === "" || returnDate === "mm/dd/yyyy") {
             validInput = false;
             $("#modal-text").append("- Please select a valid Return Date." + "\n");
+        };
+
+        if (departDate > returnDate) {
+            validInput = false;
+            $("#modal-text").append("- Please select a Departure Date that is prior to the Return Date." + "\n");
         };
 
         if ( !displayState.airSelected && !displayState.hotelSelected && !displayState.eventSelected) {
@@ -276,8 +296,8 @@ $(document).ready(function () {
         // number of people is forced to be a number - no input validation required
 
         if (!validInput) {
-            console.log("In showButton");
-            console.log("validInput = " + validInput);
+            // console.log("In showButton");
+            // console.log("validInput = " + validInput);
             $("#myModal").modal();
         }
         else {
@@ -303,7 +323,7 @@ $(document).ready(function () {
             "<td>" + airOptionList[i].fareType + "</td>" + 
             "<td>" + airOptionList[i].price + "</td></tr>");
             
-            console.log("airOptionList[i].carrier = " + airOptionList[i].carrier);
+            // console.log("airOptionList[i].carrier = " + airOptionList[i].carrier);
         };
 
         for (var j = 0; j < hotelOptionList.length; j++) {
@@ -314,7 +334,7 @@ $(document).ready(function () {
             "<td>" + hotelOptionList[j].rating + "</td>" + 
             "<td>" + hotelOptionList[j].price + "</td></tr>");
     
-            console.log("hotelOptionList[j].hotelName = " + hotelOptionList[j].hotelName);
+            // console.log("hotelOptionList[j].hotelName = " + hotelOptionList[j].hotelName);
         };
 
         for (var k = 0; k < eventOptionList.length; k++) {
@@ -327,7 +347,7 @@ $(document).ready(function () {
             "<td>" + eventOptionList[k].description + "</td>" + 
             "<td>" + eventOptionList[k].price + "</td></tr>");
 
-            console.log("eventOptionList[k].event = " + eventOptionList[k].event);
+            // console.log("eventOptionList[k].event = " + eventOptionList[k].event);
         };
 
         updateDisplay();
@@ -351,17 +371,30 @@ $(document).ready(function () {
         // mark selection as selected (highlight or checkbox/radio buton selected, ???)
     // end Event option selection handler
 
-    // clear inputs button click
-        // clear departure airport
-        // clear destination airport
-        // clear departure date
-        // clear return date
-        // clear number of people field
-        // set RoundTrip-OneWay radio button to RoundTrip
-        // clear Air, Hotel and Event checkboxes
-        // set displayState to "no-selection"
-        // call updateDisplay to clear Air, Hotel & event tables
-    // end clear button click
+    $("#reset").on("click", function() {
+        $(".airline-options-list").empty();
+        $(".hotel-options-list").empty();
+        $(".event-options-list").empty();
+
+        $("#depart-form").val("");
+        $("#dest-form").val("");
+        $("#depart-date").val('0000-00-00');
+        $("#return-date").val('0000-00-00');
+        $("#FormControlSelect1").val("1");
+
+        displayState.airSelected = false;
+        displayState.hotelSelected = false;
+        displayState.eventSelected = false;
+        updateDisplay();
+
+        $('#inlineCheckboxAir').prop('checked', false);
+        $('#inlineCheckboxHotel').prop('checked', false);
+        $('#inlineCheckboxEvents').prop('checked', false);
+
+        $('#RadiosRT').prop('checked', true);
+        $('#RadiosOW').prop('checked', false);
+
+    });
 
     updateDisplay();
 
