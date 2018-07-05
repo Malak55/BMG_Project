@@ -6,7 +6,9 @@
 // File: app.js
 // *************************************************
 
+//**********************************************************
 // Declare links to APIs, etc as needded
+//**********************************************************
 
 //**********************************************************
 // Declare global variables
@@ -156,8 +158,10 @@
 //**********************************************************
 // Define supporting functions
 //**********************************************************
+    
+    //******************************************************
     // Update Display
-        //updates display based on displayState
+    //******************************************************
     function updateDisplay() {
         //updates display based on displayState
         if (displayState.airSelected) {
@@ -182,14 +186,18 @@
         };
     }; // function updateDisplay
 
+//**********************************************************
 // Define functionality to be available after the page has loaded
+//**********************************************************
 $(document).ready(function () { 
 
 //**********************************************************
 // Define event handlers
 //**********************************************************
         
-    // Air-Hotel-Event checkbox click handler
+    //******************************************************
+    // Air checkbox click handler
+    //******************************************************
     $("#inlineCheckboxAir").on("click", function() {
         if ($("#inlineCheckboxAir").is(":checked")) {
             displayState.airSelected = true;
@@ -197,13 +205,11 @@ $(document).ready(function () {
         else {
             displayState.airSelected = false;
         }
-        // console.log("Airline checkbox clicked");
-        // console.log("displayState.airSelected = " + displayState.airSelected);
-        // console.log("displayState.hotelSelected = " + displayState.hotelSelected);
-        // console.log("displayState.eventSelected = " + displayState.eventSelected);
-        // console.log("*********************************************");
     }); // inlineCheckboxAir on click
 
+    //******************************************************
+    // Hotel checkbox click handler
+    //******************************************************
     $("#inlineCheckboxHotel").on("click", function() {
         if ($("#inlineCheckboxHotel").is(":checked")) {
             displayState.hotelSelected = true;
@@ -211,13 +217,11 @@ $(document).ready(function () {
         else {
             displayState.hotelSelected = false;
         }
-        // console.log("Hotel checkbox clicked");
-        // console.log("displayState.airSelected = " + displayState.airSelected);
-        // console.log("displayState.hotelSelected = " + displayState.hotelSelected);
-        // console.log("displayState.eventSelected = " + displayState.eventSelected);
-        // console.log("*********************************************");
     }); // inlineCheckboxHotel on click
-    
+
+    //******************************************************
+    // Event checkbox click handler
+    //******************************************************
     $("#inlineCheckboxEvents").on("click", function() {
         if ($("#inlineCheckboxEvents").is(":checked")) {
             displayState.eventSelected = true;
@@ -225,31 +229,26 @@ $(document).ready(function () {
         else {
             displayState.eventSelected = false;
         }
-        // console.log("Events checkbox clicked");
-        // console.log("displayState.airSelected = " + displayState.airSelected);
-        // console.log("displayState.hotelSelected = " + displayState.hotelSelected);
-        // console.log("displayState.eventSelected = " + displayState.eventSelected);
-        // console.log("*********************************************");
     }); // inlineCheckboxEvents on click
 
-    // ShowOption button click
+    //******************************************************
+    // ShowOption button click handler
+    //******************************************************
     $("#showButton").on("click", function() {
-        // Declare local variables
+        // Capture user input into local variables
         departureAirport = $("#depart-form").val();
         destinationAirport = $("#dest-form").val();
         departDate = $("#depart-date").val();
         returnDate = $("#return-date").val();
         numPeople = $("#FormControlSelect1").val();
 
-        // console.log("moment().diff(departDate, 'days') = " + moment().diff(departDate, "days"));
-        
-
-        // Verify user Inputs
+        // Variable to track validity of user input
         var validInput = true;
 
         // Clear modal message
         $("#modal-text").text("");
 
+        // Verify user Inputs
 
         if (departureAirport === "") {
             validInput = false;
@@ -295,9 +294,8 @@ $(document).ready(function () {
 
         // number of people is forced to be a number - no input validation required
 
+        // if any inputs are invalid, warn user via modal dialog box
         if (!validInput) {
-            // console.log("In showButton");
-            // console.log("validInput = " + validInput);
             $("#myModal").modal();
         }
         else {
@@ -371,31 +369,40 @@ $(document).ready(function () {
         // mark selection as selected (highlight or checkbox/radio buton selected, ???)
     // end Event option selection handler
 
+    //******************************************************
+    // Reset button click handler
+    //******************************************************
     $("#reset").on("click", function() {
+        // Clear display lists
         $(".airline-options-list").empty();
         $(".hotel-options-list").empty();
         $(".event-options-list").empty();
 
+        // Clear/reset user input fields
         $("#depart-form").val("");
         $("#dest-form").val("");
-        $("#depart-date").val('0000-00-00');
+        $("#depart-date").val("yyyy-MM-dd");
         $("#return-date").val('0000-00-00');
         $("#FormControlSelect1").val("1");
 
+        // Reset display state for Air, Hotel and Wevent and update the display
         displayState.airSelected = false;
         displayState.hotelSelected = false;
         displayState.eventSelected = false;
         updateDisplay();
 
+        // Clear Air, Hotel and Event check boxes
         $('#inlineCheckboxAir').prop('checked', false);
         $('#inlineCheckboxHotel').prop('checked', false);
         $('#inlineCheckboxEvents').prop('checked', false);
 
+        // Reset the Round Trip / One-Way radio button so Round Trip is selected
         $('#RadiosRT').prop('checked', true);
         $('#RadiosOW').prop('checked', false);
 
     });
 
+    // Initialize the display
     updateDisplay();
 
-}); // $(document).ready
+}); // end of $(document).ready
