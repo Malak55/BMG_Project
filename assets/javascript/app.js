@@ -47,6 +47,7 @@
     };
 
     // Object definitions for Air, Hotel and Event
+
     var airOptionItem = {
         optionNum: 0,
         carrier: "",
@@ -54,7 +55,7 @@
         arrivalTime: "hh:mm A",
         duration: "0h",
         numStops: "Nonstop",
-        rating: "Very Good Flight (8/10)",
+        // rating: "Very Good Flight (8/10)",
         fareType: "Round Trip",
         price: "0"
     };
@@ -64,7 +65,7 @@
         hotelName: "",
         location: "Address",
         phoneNum: "888-000-0000",
-        rating: "4.3/5 Excellent",
+        // rating: "4.3/5 Excellent",
         price: "0"
     };
 
@@ -84,74 +85,74 @@
     var hotelOptionList = [];
     var eventOptionList = [];
 
-    //test data - Delete after testing complete
-    var airOptionItemTest1 = {
-        optionNum: 1,
-        carrier: "American Airlines",
-        departTime: "09:45 AM",
-        arrivalTime: "11:30 AM",
-        duration: "1h 45m",
-        numStops: "Nonstop",
-        rating: "Very Good Flight (8/10)",
-        fareType: "Round Trip",
-        price: "$422"
-    }
+    // //test data - Delete after testing complete
+    // var airOptionItemTest1 = {
+    //     optionNum: 1,
+    //     carrier: "American Airlines",
+    //     departTime: "09:45 AM",
+    //     arrivalTime: "11:30 AM",
+    //     duration: "1h 45m",
+    //     numStops: "Nonstop",
+    //     rating: "Very Good Flight (8/10)",
+    //     fareType: "Round Trip",
+    //     price: "$422"
+    // }
 
-    var airOptionItemTest2 = {
-        optionNum: 2,
-        carrier: "Southwest Airlines",
-        departTime: "09:45 AM",
-        arrivalTime: "11:30 AM",
-        duration: "1h 45m",
-        numStops: "Nonstop",
-        rating: "Very Good Flight (8/10)",
-        fareType: "Round Trip",
-        price: "$422"
-    }
+    // var airOptionItemTest2 = {
+    //     optionNum: 2,
+    //     carrier: "Southwest Airlines",
+    //     departTime: "09:45 AM",
+    //     arrivalTime: "11:30 AM",
+    //     duration: "1h 45m",
+    //     numStops: "Nonstop",
+    //     rating: "Very Good Flight (8/10)",
+    //     fareType: "Round Trip",
+    //     price: "$422"
+    // }
 
-    var hotelOptionItem1 = {
-        optionNum: 1,
-        hotelName: "Marriott Inn + Suites",
-        location: "1234 W. Main Street, Overland Park Kansas",
-        phoneNum: "800-123-4567",
-        rating: "4.3/5 Excellent",
-        price: "$136"
-    };
+    // var hotelOptionItem1 = {
+    //     optionNum: 1,
+    //     hotelName: "Marriott Inn + Suites",
+    //     location: "1234 W. Main Street, Overland Park Kansas",
+    //     phoneNum: "800-123-4567",
+    //     rating: "4.3/5 Excellent",
+    //     price: "$136"
+    // };
 
-    var hotelOptionItem2 = {
-        optionNum: 1,
-        hotelName: "Best Western",
-        location: "1234 W. Main Street, Overland Park Kansas",
-        phoneNum: "800-123-4567",
-        rating: "4.3/5 Excellent",
-        price: "$136"
-    };
+    // var hotelOptionItem2 = {
+    //     optionNum: 1,
+    //     hotelName: "Best Western",
+    //     location: "1234 W. Main Street, Overland Park Kansas",
+    //     phoneNum: "800-123-4567",
+    //     rating: "4.3/5 Excellent",
+    //     price: "$136"
+    // };
 
-    var eventOptionItem1 = {
-        optionNum: 1,
-        event: "SEA LIFE Kansas City Aquarium",
-        provider: "teSea Life Aquariumst",
-        location: "SEA LIFE Kansas City, 2475 Grand Blvd, Kansas City 64108",
-        duration: "1h 20m",
-        rating: "4/5",
-        description: "A wonder for all ages, SEA LIFE Kansas City Aquarium is home to more than 5,000 sea creatures. Explore interactive touch pools, walk through an underwater tunnel with 180-degree views, and get astonishingly close to a blacktip reef shark swimming alongside graceful rays in the ocean exhibit.",
-        price: "$16.42"
-    };
+    // var eventOptionItem1 = {
+    //     optionNum: 1,
+    //     event: "SEA LIFE Kansas City Aquarium",
+    //     provider: "teSea Life Aquariumst",
+    //     location: "SEA LIFE Kansas City, 2475 Grand Blvd, Kansas City 64108",
+    //     duration: "1h 20m",
+    //     rating: "4/5",
+    //     description: "A wonder for all ages, SEA LIFE Kansas City Aquarium is home to more than 5,000 sea creatures. Explore interactive touch pools, walk through an underwater tunnel with 180-degree views, and get astonishingly close to a blacktip reef shark swimming alongside graceful rays in the ocean exhibit.",
+    //     price: "$16.42"
+    // };
 
-    var eventOptionItem2 = {
-        optionNum: 2,
-        event: "Indoor Skydiving Experience",
-        provider: "iFLY Indoor Skydiving",
-        location: "SEA LIFE Kansas City, 2475 Grand Blvd, Kansas City 64108",
-        duration: "1h 20m",
-        rating: "--",
-        description: "Experience all the plummeting, free falling, and soaring sensations of skydiving without ever getting on a plane. This indoor skydiving experience puts you in a vertical wind tunnel, where you can float weightlessly in space for an unforgettable adrenaline rush in totally safe surroundings.",
-        price: "$77"
-    };
+    // var eventOptionItem2 = {
+    //     optionNum: 2,
+    //     event: "Indoor Skydiving Experience",
+    //     provider: "iFLY Indoor Skydiving",
+    //     location: "SEA LIFE Kansas City, 2475 Grand Blvd, Kansas City 64108",
+    //     duration: "1h 20m",
+    //     rating: "--",
+    //     description: "Experience all the plummeting, free falling, and soaring sensations of skydiving without ever getting on a plane. This indoor skydiving experience puts you in a vertical wind tunnel, where you can float weightlessly in space for an unforgettable adrenaline rush in totally safe surroundings.",
+    //     price: "$77"
+    // };
 
-    airOptionList = [airOptionItemTest1, airOptionItemTest2];
-    hotelOptionList = [hotelOptionItem1, hotelOptionItem2];
-    eventOptionList = [eventOptionItem1, eventOptionItem2];
+    // airOptionList = [airOptionItemTest1, airOptionItemTest2];
+    // hotelOptionList = [hotelOptionItem1, hotelOptionItem2];
+    // eventOptionList = [eventOptionItem1, eventOptionItem2];
 
 
 
@@ -194,7 +195,7 @@ $(document).ready(function () {
 //**********************************************************
 // Define event handlers
 //**********************************************************
-        
+       
     //******************************************************
     // Air checkbox click handler
     //******************************************************
@@ -241,6 +242,8 @@ $(document).ready(function () {
         departDate = $("#depart-date").val();
         returnDate = $("#return-date").val();
         numPeople = $("#FormControlSelect1").val();
+
+        console.log(departDate);
 
         // Variable to track validity of user input
         var validInput = true;
@@ -304,11 +307,26 @@ $(document).ready(function () {
             $(".hotel-options-list").empty();
             $(".event-options-list").empty();
         // Use API's to get options
+
+        //Hotel API
+     
         // build Air table with options
         // build Hotel table with options
+           
+
         // build Google Map with Hotel locations
         // build Event table with options
         // build Google Map with event locations
+        var queryURL = "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?&apikey=ch0oiVhwERRq4QV463WHIfQ7lQtelzbP&number_of_results=10&origin="+departureAirport+"&destination="+ destinationAirport + "&departure_date=" + departDate + "&return_date="+ returnDate+"&adults="+numPeople
+
+        console.log(queryURL);
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+        console.log(response);
+
+        var airOptionList = response.data;
 
         for (var i = 0; i < airOptionList.length; i++) {
             $(".airline-options-list").append("<tr><td>" + airOptionList[i].optionNum + "</td>" + 
@@ -322,7 +340,19 @@ $(document).ready(function () {
             "<td>" + airOptionList[i].price + "</td></tr>");
             
             // console.log("airOptionList[i].carrier = " + airOptionList[i].carrier);
-        };
+        }
+        });
+
+        var queryURL = "https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?&apikey=ch0oiVhwERRq4QV463WHIfQ7lQtelzbP&number_of_results=10&location="+ destinationAirport + "&check_in=" + departDate + "&check_out="+ returnDate
+
+        console.log(queryURL);
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+        console.log(response);
+
+        var hotelOptionList = response.data;
 
         for (var j = 0; j < hotelOptionList.length; j++) {
             $(".hotel-options-list").append("<tr><td>" + hotelOptionList[j].optionNum + "</td>" + 
@@ -330,23 +360,38 @@ $(document).ready(function () {
             "<td>" + hotelOptionList[j].location + "</td>" + 
             "<td>" + hotelOptionList[j].phoneNum + "</td>" + 
             "<td>" + hotelOptionList[j].rating + "</td>" + 
-            "<td>" + hotelOptionList[j].price + "</td></tr>");
+            "<td>" + hotelOptionList[j].price + "</td></tr>")
+
+            console.log(location[j]);
     
             // console.log("hotelOptionList[j].hotelName = " + hotelOptionList[j].hotelName);
-        };
+            }
+        });
+        
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&totalElements=1&startDateTime="+departDate+"T00:00:00Z&endDateTime="+returnDate+"T00:00:00Z&postalCode=02128&apikey=ETGlyyLFFEuPfDApGGvU4u2dcDPX9Vfh"
+
+        console.log(queryURL);
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+        console.log(response);
+
+        var eventOptionList = response.data;
+        console.log(eventOptionList);
 
         for (var k = 0; k < eventOptionList.length; k++) {
             $(".event-options-list").append("<tr><td>" + eventOptionList[k].optionNum + "</td>" + 
             "<td>" + eventOptionList[k].event + "</td>" + 
-            "<td>" + eventOptionList[k].provider + "</td>" + 
-            "<td>" + eventOptionList[k].location + "</td>" + 
-            "<td>" + eventOptionList[k].duration + "</td>" + 
-            "<td>" + eventOptionList[k].rating + "</td>" +
-            "<td>" + eventOptionList[k].description + "</td>" + 
+            // "<td>" + eventOptionList[k].provider + "</td>" + 
+            "<td>" + eventOptionList[k].venue + "</td>" + 
+            // "<td>" + eventOptionList[k].duration + "</td>" + 
+            // "<td>" + eventOptionList[k].rating + "</td>" +
+            // "<td>" + eventOptionList[k].description + "</td>" + 
             "<td>" + eventOptionList[k].price + "</td></tr>");
-
+        }
             // console.log("eventOptionList[k].event = " + eventOptionList[k].event);
-        };
+        });
 
         updateDisplay();
 
@@ -406,3 +451,4 @@ $(document).ready(function () {
     updateDisplay();
 
 }); // end of $(document).ready
+

@@ -28,16 +28,41 @@
   }
 
   #div2 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
     border-bottom: none;
   }
 
   #div3 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
     background:transparent;
   } 
 
   #div4 {
     background:transparent;
   }
+
+  /* #div3 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
+  } */
+  /* #div4 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
+  } */
 
   #FormControlSelect1 {
     margin: auto;
