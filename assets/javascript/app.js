@@ -80,10 +80,10 @@
         price: "0"
     };
 
-    // // Arrays to store Air, Hotel and Event options
-    // var airOptionList = [];
-    // var hotelOptionList = [];
-    // var eventOptionList = [];
+    // Arrays to store Air, Hotel and Event options
+    var airOptionList = [];
+    var hotelOptionList = [];
+    var eventOptionList = [];
 
     // //test data - Delete after testing complete
     // var airOptionItemTest1 = {
@@ -326,18 +326,19 @@ $(document).ready(function () {
         }).then(function(response) {
         console.log(response);
 
-        var airOptionList = response.data;
+        var airOptionList = JSON.parse(response.data);
+        console.log(airOptionList);
 
         for (var i = 0; i < airOptionList.length; i++) {
             $(".airline-options-list").append("<tr><td>" + airOptionList[i] + "</td>" + 
-            "<td>" + airOptionList[i].carrier + "</td>" + 
-            "<td>" + airOptionList[i].departTime + "</td>" + 
-            "<td>" + airOptionList[i].arrivalTime + "</td>" + 
-            "<td>" + airOptionList[i].duration + "</td>" + 
-            "<td>" + airOptionList[i].numStops + "</td>" + 
-            "<td>" + airOptionList[i].rating + "</td>" + 
-            "<td>" + airOptionList[i].fareType + "</td>" + 
-            "<td>" + airOptionList[i].price + "</td></tr>");
+            "<td>" + airOptionList[i].results.itineraries.outbound.flights.marketing_airline + "</td>" + 
+            // "<td>" + airOptionList[i].departTime + "</td>" + 
+            // "<td>" + airOptionList[i].arrivalTime + "</td>" + 
+            // "<td>" + airOptionList[i].duration + "</td>" + 
+            // "<td>" + airOptionList[i].numStops + "</td>" + 
+            // "<td>" + airOptionList[i].rating + "</td>" + 
+            // "<td>" + airOptionList[i].fareType + "</td>" + 
+            "<td>" + airOptionList[i].fare.price_per_adult + "</td></tr>");
             
             // console.log("airOptionList[i].carrier = " + airOptionList[i].carrier);
         }
@@ -356,11 +357,11 @@ $(document).ready(function () {
 
         for (var j = 0; j < hotelOptionList.length; j++) {
             $(".hotel-options-list").append("<tr><td>" + hotelOptionList[j].optionNum + "</td>" + 
-            "<td>" + hotelOptionList[j].hotelName + "</td>" + 
-            "<td>" + hotelOptionList[j].location + "</td>" + 
-            "<td>" + hotelOptionList[j].phoneNum + "</td>" + 
-            "<td>" + hotelOptionList[j].rating + "</td>" + 
-            "<td>" + hotelOptionList[j].price + "</td></tr>")
+            "<td>" + hotelOptionList[j].results.property_name + "</td>" + 
+            "<td>" + hotelOptionList[j].results.location + "</td>" + 
+            "<td>" + hotelOptionList[j].results.contacts[0].detail + "</td>" + 
+            // "<td>" + hotelOptionList[j].rating + "</td>" + 
+            "<td>" + hotelOptionList[j].results.total_price.amount + "</td></tr>")
 
             console.log(location[j]);
     
