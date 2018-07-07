@@ -134,27 +134,44 @@
             <div class="col-md-12">
                 <div id="div1">
                   <p>Departure 
-                    <input type="TEXT" size="35" maxlength-"99" id="depart-form" />
-                    <div class="form-check" display: "inline block">
+                    <!-- <input type="TEXT" size="35" maxlength-"99" id="depart-form" /> -->
+                    <select class="form-control" display: "inline block" id="depart-form">
+                        <option value="MCI">Kansas City,MO</option>
+                        <option value="LAS">Las Vegas,NV</option>
+                        <option value="LAX">Las Angeles,CA</option>
+                        <option value="DFW">Dallas-Ft Worth,TX</option>
+                        <option value="DEN">Denver,CO</option>
+                        <option value="HNL">Honolulu,HI</option>
+                    </select>
                   </p>
                 </div>
                 
-                <div id="div2">
+                <div class="col-md-12" id="div2">
                   <p>Destination 
-                    <input type="TEXT" size="35" maxlength-"99" id="dest-form" />
-                    <div class="form-check"></div>
+                    <!-- <input type="TEXT" size="35" maxlength-"99" id="dest-form" /> -->
+                    <select class="form-control" display: "inline block" id="dest-form">
+                        <option value="MCI">Kansas City,MO</option>
+                        <option value="LAS">Las Vegas,NV</option>
+                        <option value="LAX">Las Angeles,CA</option>
+                        <option value="DFW">Dallas-Ft Worth,TX</option>
+                        <option value="DEN">Denver,CO</option>
+                        <option value="HNL">Honolulu,HI</option>
+                    </select>
                   </p>
                 </div>
 
-                <div id="div3">
+                <div class="col-md-12" id="div3">
                     <input class="form-check-input" display="inline" type="radio" name="Radios" id="RadiosRT" value="option1" checked>
                     <label class="form-check-label" for="Radios1">Round Trip</label>
-                </div>
-                
-                <div id="div4">
+                    <P></P>
                     <input class="form-check-input" display="inline: block" type="radio" name="Radios" id="RadiosOW" value="option1" checked>
                     <label class="form-check-label" for="Radios2">One Way</label>
                 </div>
+                
+                <!-- <div class="col-md-12" id="div4">
+                    <input class="form-check-input" display="inline: block" type="radio" name="Radios" id="RadiosOW" value="option1" checked>
+                    <label class="form-check-label" for="Radios2">One Way</label>
+                </div> -->
                 
                 <div class="form-group row" id="depart-date1">
                     <label for="depart-date" class="col-2 col-form-label">Depature Date</label>
@@ -169,16 +186,17 @@
                           <input class="form control" type="date" value"2011-08-20" id="return-date">
                         </div>
                 </div>
-              
+
+                             
                 <div class="form-group">
                       <label for="FormControlSelect1">Number of People</label>
                       <select class="form-control" id="FormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                       </select>
                 </div>
               <!-- <div class="col-md-5"> -->
@@ -292,9 +310,9 @@
                       <tr class="table-primary">
                           <th scope="col">Option #</th>
                           <th scope="col">Hotel Name</th>
-                          <th scope="col">Location</th>
+                          <!-- <th scope="col">Location</th> -->
                           <th scope="col">Phone Number</th>
-                          <th scope="col">Rating</th>
+                          <!-- <th scope="col">Rating</th> -->
                           <th scope="col">Price / Night</th>
                       </tr>
                     </thead>
@@ -325,11 +343,11 @@
                       <tr class="table-primary">
                           <th scope="col">Option #</th>
                           <th scope="col">Event</th>
-                          <th scope="col">Provider</th>
+                          <!-- <th scope="col">Provider</th> -->
                           <th scope="col">Location</th>
-                          <th scope="col">Duration</th>
+                          <!-- <th scope="col">Duration</th>
                           <th scope="col">Rating</th>
-                          <th scope="col">Description</th>
+                          <th scope="col">Description</th> -->
                           <th scope="col">Price / Person</th>
                       </tr>
                     </thead>

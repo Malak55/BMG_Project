@@ -47,31 +47,6 @@
     };
 
     // Object definitions for Air, Hotel and Event
-    var cities = [
-        {name: "Kansas City",
-        airportCode : "MCI"
-        },
-        {name: "Las Vegas",
-        airportCode: "LAS"
-        },
-        {name: "Boston",
-        airportCode: "BOS"
-        },
-        {name: "Las Angeles",
-        airportCode: "LAX"
-        },
-        {name: "Denver",
-        airportCode: "DEN"
-        },
-        {name: "Honolulu",
-        airportCode: "HNL"
-        },
-        {name: "Fiji",
-        airportCode: "NAN"
-        },
-    ];
-
-
 
     var airOptionItem = {
         optionNum: 0,
@@ -342,6 +317,16 @@ $(document).ready(function () {
         // build Google Map with Hotel locations
         // build Event table with options
         // build Google Map with event locations
+        var queryURL = "https://api.sandbox.amadeus.com/v1.2/flights/low-fare-search?&apikey=ch0oiVhwERRq4QV463WHIfQ7lQtelzbP&number_of_results=10&origin="+departureAirport+"&destination="+ destinationAirport + "&departure_date=" + departDate + "&return_date="+ returnDate+"&adults="+numPeople
+
+        console.log(queryURL);
+        $.ajax({
+        url: queryURL,
+        method: "GET"
+        }).then(function(response) {
+        console.log(response);
+
+        var airOptionList = response.data;
 
         for (var i = 0; i < airOptionList.length; i++) {
             $(".airline-options-list").append("<tr><td>" + airOptionList[i].optionNum + "</td>" + 
@@ -355,12 +340,12 @@ $(document).ready(function () {
             "<td>" + airOptionList[i].price + "</td></tr>");
             
             // console.log("airOptionList[i].carrier = " + airOptionList[i].carrier);
-        };
+        }
+        });
 
         var queryURL = "https://api.sandbox.amadeus.com/v1.2/hotels/search-airport?&apikey=ch0oiVhwERRq4QV463WHIfQ7lQtelzbP&number_of_results=10&location="+ destinationAirport + "&check_in=" + departDate + "&check_out="+ returnDate
 
         console.log(queryURL);
-        // Creating an AJAX call for the specific gif button being clicked
         $.ajax({
         url: queryURL,
         method: "GET"
@@ -386,7 +371,6 @@ $(document).ready(function () {
         var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&totalElements=1&startDateTime="+departDate+"T00:00:00Z&endDateTime="+returnDate+"T00:00:00Z&postalCode=02128&apikey=ETGlyyLFFEuPfDApGGvU4u2dcDPX9Vfh"
 
         console.log(queryURL);
-        // Creating an AJAX call for the specific gif button being clicked
         $.ajax({
         url: queryURL,
         method: "GET"
@@ -394,15 +378,16 @@ $(document).ready(function () {
         console.log(response);
 
         var eventOptionList = response.data;
+        console.log(eventOptionList);
 
         for (var k = 0; k < eventOptionList.length; k++) {
             $(".event-options-list").append("<tr><td>" + eventOptionList[k].optionNum + "</td>" + 
             "<td>" + eventOptionList[k].event + "</td>" + 
-            "<td>" + eventOptionList[k].provider + "</td>" + 
-            "<td>" + eventOptionList[k].location + "</td>" + 
-            "<td>" + eventOptionList[k].duration + "</td>" + 
-            "<td>" + eventOptionList[k].rating + "</td>" +
-            "<td>" + eventOptionList[k].description + "</td>" + 
+            // "<td>" + eventOptionList[k].provider + "</td>" + 
+            "<td>" + eventOptionList[k].venue + "</td>" + 
+            // "<td>" + eventOptionList[k].duration + "</td>" + 
+            // "<td>" + eventOptionList[k].rating + "</td>" +
+            // "<td>" + eventOptionList[k].description + "</td>" + 
             "<td>" + eventOptionList[k].price + "</td></tr>");
         }
             // console.log("eventOptionList[k].event = " + eventOptionList[k].event);

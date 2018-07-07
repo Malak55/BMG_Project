@@ -19,10 +19,36 @@
     padding: 5px;
     text-align: center;
   }
+  #div2 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
+  }
 
   #div3 {
-    margin-left: 5px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
   }
+
+  /* #div3 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
+  } */
+  /* #div4 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 5px;
+    text-align: center;
+  } */
 
   #FormControlSelect1 {
     margin: auto;
