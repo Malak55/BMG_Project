@@ -1,0 +1,40 @@
+ Culmination Destination
+Travel Hotel Events App
+
+
+Culmination Destination
+Description
+An app designed for making your travels arrangements easier by way of compiling Airline, Hotel and Event information together.
+User is able to browse through information selected, but user does not have to commit to all three categories.
+Results
+Used Bootstrap, StubHub, Google Maps and Amadeus API’s to present the user input forms while pulling and presenting data based on the user inputs.
+
+Culmination Destination
+
+BMG WORKGROUP
+Matt Schiereck
+Rod Skoglund
+Danny Zamora
+
+
+
+Work Breakdown
+We tried to take advantage of our strengths and preferences.  
+Matt Schiereck - The Project Manager (he made the mistake of creating the repo). Matt also developed the front-end (HTML/CSS files).
+Rod Skoglund - Developed the back-end Javascript files to manage the page including input error handling that utilizes Modal Dialog Boxes to communicate with the user.
+Danny Zamora - Developed API interfaces to get the info we need and provide it to the Javascript code for the display.
+
+Challenges
+Developing this app uncovered several challenges
+A template that fit our needs
+Adding forms, buttons, radio buttons and checkboxes
+Switching from Alerts to using modals to pop up messages for the user
+Selecting good APIs from a wide selection of available choices
+Learning how to use GIT in a collaborative environment
+
+Future Enhancements
+Features that should be added to improve the users experience.
+Calculating overall cost
+Providing a printable itinerary
+Add travel guide and blog for user reviews
+Provide links to purchasing tickets
