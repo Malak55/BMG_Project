@@ -80,10 +80,10 @@
         price: "0"
     };
 
-    // Arrays to store Air, Hotel and Event options
-    var airOptionList = [];
-    var hotelOptionList = [];
-    var eventOptionList = [];
+    // // Arrays to store Air, Hotel and Event options
+    // var airOptionList = [];
+    // var hotelOptionList = [];
+    // var eventOptionList = [];
 
     // //test data - Delete after testing complete
     // var airOptionItemTest1 = {
@@ -329,7 +329,7 @@ $(document).ready(function () {
         var airOptionList = response.data;
 
         for (var i = 0; i < airOptionList.length; i++) {
-            $(".airline-options-list").append("<tr><td>" + airOptionList[i].optionNum + "</td>" + 
+            $(".airline-options-list").append("<tr><td>" + airOptionList[i] + "</td>" + 
             "<td>" + airOptionList[i].carrier + "</td>" + 
             "<td>" + airOptionList[i].departTime + "</td>" + 
             "<td>" + airOptionList[i].arrivalTime + "</td>" + 
@@ -368,27 +368,24 @@ $(document).ready(function () {
             }
         });
         
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?size=10&totalElements=1&startDateTime="+departDate+"T00:00:00Z&endDateTime="+returnDate+"T00:00:00Z&postalCode=02128&apikey=ETGlyyLFFEuPfDApGGvU4u2dcDPX9Vfh"
-
-        console.log(queryURL);
         $.ajax({
         url: queryURL,
         method: "GET"
         }).then(function(response) {
         console.log(response);
 
-        var eventOptionList = response.data;
-        console.log(eventOptionList);
+        // var results = response.data;
+        // console.log(results);
 
-        for (var k = 0; k < eventOptionList.length; k++) {
-            $(".event-options-list").append("<tr><td>" + eventOptionList[k].optionNum + "</td>" + 
-            "<td>" + eventOptionList[k].event + "</td>" + 
+        for (var k = 0; k < resonse.length; k++) {
+            $("#event-options-list").append("<tr><td>" + response[k] + "</td>" + 
+            "<td>" + response[k].embedded.events.name + "</td>" + 
             // "<td>" + eventOptionList[k].provider + "</td>" + 
-            "<td>" + eventOptionList[k].venue + "</td>" + 
+            "<td>" + response[k].embedded.events._embedded.venues.name + "</td>" + 
             // "<td>" + eventOptionList[k].duration + "</td>" + 
             // "<td>" + eventOptionList[k].rating + "</td>" +
             // "<td>" + eventOptionList[k].description + "</td>" + 
-            "<td>" + eventOptionList[k].price + "</td></tr>");
+            "<td>" + response[k].embedded.events.priceRanges.min+"-" + response[k].embedded.events.priceRanges.max+"</td></tr>");
         }
             // console.log("eventOptionList[k].event = " + eventOptionList[k].event);
         });
